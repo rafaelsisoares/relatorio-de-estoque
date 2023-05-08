@@ -6,7 +6,7 @@ company = 'Organizações Tabajara'
 product_name = 'Faca Guincho'
 manufacturing_date = '2023-05-02'
 expiration_date = '2026-05-02'
-storage_info = 'em temperatura ambiente longe de fontes de umidade'
+storage_info = 'em temperatura ambiente'
 serial = '12345678'
 
 
@@ -26,4 +26,4 @@ def test_relatorio_produto():
         "fabricado em 2023-05-02 "
         "por Organizações Tabajara com validade "
         "até 2026-05-02 "
-        "precisa ser armazenado em temperatura ambiente longe de fontes de umidade.")
+        "precisa ser armazenado em temperatura ambiente.")
