@@ -1,5 +1,6 @@
 import csv
 import json
+import xml.etree.ElementTree as ET
 from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
 
@@ -19,7 +20,11 @@ class Inventory:
 
     @staticmethod
     def xml_reader(path):
-        raise NotImplementedError
+        tree = ET.parse(path)
+        root = tree.getroot()
+        return [
+            dict((item.tag, item.text) for item in record) for record in root
+        ]
 
     @staticmethod
     def import_data(path, type):
