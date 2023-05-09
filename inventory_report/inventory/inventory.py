@@ -1,4 +1,5 @@
 import csv
+import json
 from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
 
@@ -12,7 +13,9 @@ class Inventory:
 
     @staticmethod
     def json_reader(path):
-        raise NotImplementedError
+        with open(path, mode="r") as file:
+            data = json.load(file)
+            return data
 
     @staticmethod
     def xml_reader(path):
